@@ -18,11 +18,39 @@ After the installation is completed, you just need to start Termux-x11 by typing
 
 You can also use Input Bridge, just run `installer.bat` and Input Bridge will start automatically.
 
+# Enable VirGL for Non-turnip users
+## Virgl gles (Recommended)
+### Install VirGLES
+```
+pkg install x11-repo 
+pkg install virglrenderer-android
+```
+### In Termux
+```
+MESA_NO_ERROR=1 MESA_GL_VERSION_OVERRIDE=4.3COMPAT MESA_GLES_VERSION_OVERRIDE=3.2 virgl_test_server_android &
+```
+### In proot/chroot
+```
+MESA_NO_ERROR=1 MESA_GL_VERSION_OVERRIDE=3.3COMPAT GALLIUM_DRIVER=virpipe WINEDEBUG=-all
+```
+## Virgl zink (Not recommended)
+### Install VirGL Zink (Tested with Adreno 610 only)
+```
+pkg install x11-repo tur-repo
+pkg install mesa-zink virglrenderer-mesa-zink
+```
+### In Termux
+```
+MESA_NO_ERROR=1 MESA_GL_VERSION_OVERRIDE=4.3COMPAT MESA_GLES_VERSION_OVERRIDE=3.2 GALLIUM_DRIVER=zink ZINK_DESCRIPTORS=lazy virgl_test_server --use-egl-surfaceless --use-gles &
+```
+#In Proot/Chroot
+```
+MESA_NO_ERROR=1 MESA_GL_VERSION_OVERRIDE=3.3COMPAT GALLIUM_DRIVER=virpipe WINEDEBUG=-all
+```
+
 # System requirements 
 
-*Adreno 618+ (Except on adreno 7xx GPUS)
-
-*Android 10+??  
+*Android 8+
 
 *64-bit Android 
 
@@ -60,7 +88,6 @@ And there are probably other issues, so feel free to open an issue.
 
 # TO-DO list
 
-Install VirGL for Mali GPUs.
 
 Create a launcher.
 
