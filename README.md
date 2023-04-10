@@ -43,7 +43,7 @@ pkg install mesa-zink virglrenderer-mesa-zink
 ```
 MESA_NO_ERROR=1 MESA_GL_VERSION_OVERRIDE=4.3COMPAT MESA_GLES_VERSION_OVERRIDE=3.2 GALLIUM_DRIVER=zink ZINK_DESCRIPTORS=lazy virgl_test_server --use-egl-surfaceless --use-gles &
 ```
-#In Proot/Chroot
+# In Proot/Chroot
 ```
 MESA_NO_ERROR=1 MESA_GL_VERSION_OVERRIDE=3.3COMPAT GALLIUM_DRIVER=virpipe WINEDEBUG=-all
 ```
@@ -68,7 +68,7 @@ The `dxvk.conf` file is for you to use the environment variables referring to [d
 
 # known issues
 
-For some reason, when you go to install Termux and use the `pkg update -y` command for the first time, it may happen that you get some error and it is not possible to continue the installation, if that happens, just delete the Termux data and try again.
+For some reason, when you go to install Termux and use the `pkg update -y` command for the first time, it may happen that you get some error and it is not possible to continue the installation, if that happens, just delete the Termux data and try again or `pkg clean`
 
 ![Screenshot](Docs/InShot_20230402_231621771.jpg)
 
