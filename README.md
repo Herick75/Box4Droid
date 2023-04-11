@@ -43,7 +43,7 @@ pkg install mesa-zink virglrenderer-mesa-zink
 ```
 MESA_NO_ERROR=1 MESA_GL_VERSION_OVERRIDE=4.3COMPAT MESA_GLES_VERSION_OVERRIDE=3.2 GALLIUM_DRIVER=zink ZINK_DESCRIPTORS=lazy virgl_test_server --use-egl-surfaceless --use-gles &
 ```
-# In Proot/Chroot
+### In Proot/Chroot
 ```
 MESA_NO_ERROR=1 MESA_GL_VERSION_OVERRIDE=3.3COMPAT GALLIUM_DRIVER=virpipe WINEDEBUG=-all
 ```
