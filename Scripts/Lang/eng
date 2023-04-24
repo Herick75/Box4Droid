@@ -55,9 +55,11 @@ echo -e " Script installed."
 echo ""
 echo -e " Removing installation waste..."
 echo ""
+cd $HOME
 rm -rf box86-rootfs-v0.0.2.tar.gz
-rm -rf install.sh
+rm -rf install
 rm -rf termux-x11-1.02.07-0-all.deb
+rm -rf ptbr
 clear
 echo ""
 echo -e "\x1b[32m\033 Installation completed, here are some usage tips.
