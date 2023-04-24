@@ -13,7 +13,7 @@ rm -rf storage/shared/Box4Droid
 echo " Done."
 break
 else
-echo " Waiting for command input"
+echo " Waiting for command input, If you denied permission, press ctrl + c to exit the loop and cancel the installation."
 fi
 done
 pkg update -y
