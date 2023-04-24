@@ -38,6 +38,12 @@ tar -xvf box86-rootfs-v0.0.2.tar.gz &>/dev/null
 echo ""
 echo -e " Rootfs installed."
 echo ""
+echo -e " Installing scripts in the English language"
+cd $PREFIX/var/lib/proot-distro/installed-rootfs/Ubuntu/opt
+wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/Lang/scripts-En.tar.gz
+tar -xvf scripts-En.tar.gz
+rm -rf scritps-En.tar.gz
+echo " Scripts installed"
 echo -e " Download Rootfs init script..."
 wget https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/Lang/start-box86-eng
 mv start-box86-eng start-box86
@@ -48,7 +54,7 @@ echo -e " Script installed."
 echo ""
 echo -e " Removing installation waste..."
 echo ""
-rm -rf box86-rootfs-0.0.1.tar.gz
+rm -rf box86-rootfs-v0.0.2.tar.gz
 rm -rf install.sh
 rm -rf termux-x11-1.02.07-0-all.deb
 clear
