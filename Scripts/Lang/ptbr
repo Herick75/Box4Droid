@@ -39,8 +39,8 @@ echo ""
 echo -e " Rootfs instalado."
 echo ""
 echo -e " Baixando script de inicialização do Rootfs..."
-wget https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/start-box86.sh
-mv start-box86.sh start-box86
+wget https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/Lang/start-box86-ptbr
+mv start-box86-ptbr start-box86
 chmod +x start-box86
 mv start-box86 $PREFIX/bin
 echo ""
