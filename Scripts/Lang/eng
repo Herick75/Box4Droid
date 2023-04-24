@@ -1,4 +1,4 @@
-
+clear
 echo ""
 echo -e "\x1b[33m Starting automatic installation, please wait..." & sleep 3
 echo ""
@@ -29,7 +29,7 @@ echo -e " Termux-x11 package installed."
 echo ""
 echo -e " Downloading Preconfigured Rootfs..."
 echo ""
-wget https://github.com/Herick75/Box4Droid/releases/download/0.0.1-alpha/box86-rootfs-0.0.1.tar.gz
+wget https://github.com/Herick75/Box4Droid/releases/download/0.0.2-alpha/box86-rootfs-v0.0.2.tar.gz
 echo ""
 mv box86-rootfs-v0.0.2.tar.gz $PREFIX/var/lib
 cd $PREFIX/var/lib
@@ -44,6 +44,7 @@ wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/Lang/scripts-En.tar.
 tar -xvf scripts-En.tar.gz
 rm -rf scritps-En.tar.gz
 echo " Scripts installed"
+echo ""
 echo -e " Download Rootfs init script..."
 wget https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/Lang/start-box86-eng
 mv start-box86-eng start-box86
