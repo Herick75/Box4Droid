@@ -38,6 +38,13 @@ tar -xvf box86-rootfs-v0.0.2.tar.gz &>/dev/null
 echo ""
 echo -e " Rootfs instalado."
 echo ""
+echo -e " Instalado os scripts na versão Português Brasil..."
+cd $PREFIX/var/lib/proot-distro/installed-rootfs/Ubuntu/opt
+wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/Lang/scripts-Ptbr.tar.gz
+tar -xvf scripts-Ptbr.tar.gz
+rm -rf scripts-Ptbr.tar.gz
+echo -e " Scripts instalados"
+echo ""
 echo -e " Baixando script de inicialização do Rootfs..."
 wget https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/Lang/start-box86-ptbr
 mv start-box86-ptbr start-box86
