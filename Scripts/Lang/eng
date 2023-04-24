@@ -10,7 +10,7 @@ if [ -e $HOME/storage ]; then
 echo " Canceling installation"
 exit
 else
-echo " Checking If the Box4Droid Exista on internal storage"
+echo " Checking If the Box4Droid Exists on internal storage"
 rm -rf /storage/shared/Box4Droid
 echo " Done."
 fi
