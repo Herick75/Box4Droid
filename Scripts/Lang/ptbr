@@ -7,6 +7,17 @@ clear
 echo -e "\x1b[33m O Box4Droid cria uma pasta chamada "Box4Droid" na sua memória interna para guardar arquivos de configurações.Para que o Termux crie essa pasta, é nescessário ter permissão de armazenamento.Após 6 segundos,vai aparecer a solicitação de permissão, clique em permitir para prosseguir(ou negue e aperte CTRL + c para cancelar a instalação)." & sleep 6
 echo ""
 termux-setup-storage & sleep 3 &>/dev/null
+while true; do
+if [ -e storage ]; then
+echo " Verificando se existe fuma versão antiga da pasta Box4Droid no armazenamento interno."
+rm -rf storage/shared/Box4Droid
+echo " Pronto."
+break
+else
+echo " Esperando pela entrada do usuário, se você negou a permissão, aperte ctrl + c para sair do loop do script."
+fi
+sleep 6
+done
 pkg update -y
 #pkg clean para ter certeza que tudo vai instalar sem problemas.
 pkg clean
