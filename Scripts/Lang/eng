@@ -6,14 +6,16 @@ clear
 echo -e "\x1b[33m Box4Droid creates a folder called "Box4Droid" at the internal storage to store configuration files. For Termux to create this folder, it is necessary to have storage permissions.After 6 seconds, the permission request will appear, click on allow to proceed (or deny and press CTRL + c to cancel the installation) ." & sleep 9 &>/dev/null
 echo ""
 termux-setup-storage & sleep 3 &>/dev/null
+while true; do
 if [ -e storage ]; then
-echo " Canceling installation"
-exit
-else
 echo " Checking If the Box4Droid Exists on internal storage"
 rm -rf /storage/shared/Box4Droid
 echo " Done."
+else
+echo " Canceling installation" & sleep 5
+exit 1
 fi
+done
 pkg update -y
 #pkg clean to ensure that everything installs without errors
 pkg clean
