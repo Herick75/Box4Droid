@@ -7,7 +7,6 @@ echo -e "\x1b[33m Box4Droid creates a folder called "Box4Droid" at the internal 
 echo ""
 termux-setup-storage & sleep 3 &>/dev/null
 while true; do
-clear
 if [ -e storage ]; then
 echo " Checking If the Box4Droid Exists on internal storage"
 rm -rf storage/shared/Box4Droid
@@ -16,6 +15,7 @@ break
 else
 echo " Waiting for command input, If you denied permission, press ctrl + c to exit the loop and cancel the installation."
 fi
+sleep 6
 done
 pkg update -y
 #pkg clean to ensure that everything installs without errors
