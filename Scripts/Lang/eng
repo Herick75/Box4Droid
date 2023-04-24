@@ -11,6 +11,7 @@ if [ -e storage ]; then
 echo " Checking If the Box4Droid Exists on internal storage"
 rm -rf /storage/shared/Box4Droid
 echo " Done."
+break
 else
 echo " Canceling installation" & sleep 5
 exit 1
