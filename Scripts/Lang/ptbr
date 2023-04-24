@@ -1,1 +1,69 @@
 
+echo ""
+echo -e "\x1b[33m Iniciando instalação automática, aguarde..." & sleep 3
+echo ""
+clear
+echo -e "\x1b[33m O Box4Droid cria uma pasta chamada "Box4Droid" na sua memória interna para guardar arquivos de configurações.Para que o Termux crie essa pasta, é nescessário ter permissão de armazenamento.Após 6 segundos,vai aparecer a solicitação de permissão, clique em permitir para prosseguir(ou negue e aperte CTRL + c para cancelar a instalação)."
+echo ""
+termux-setup-storage & sleep 3 &>/dev/null
+pkg update -y
+#pkg clean para ter certeza que tudo vai instalar sem problemas.
+pkg clean
+echo -e " Verificando possíveis erros, aguarde um momento..."
+pkg update -y &>/dev/null
+echo ""
+echo -e " Concluído."
+echo ""
+echo -e "\x1b[33m Instalando x11-repo..."
+pkg install x11-repo -y &>/dev/null
+echo -e " Instalando pacotes adicionais..."
+echo ""
+pkg install xorg-server-xvfb pulseaudio xwayland proot-distro wget -y
+echo ""
+echo -e "\x1b[33m Baixando e instalando o pacote do Termux-x11..."
+echo ""
+wget https://github.com/Herick75/Box4Droid/raw/main/Apps/termux-x11-1.02.07-0-all.deb
+dpkg -i termux-x11-1.02.07-0-all.deb &>/dev/null
+echo ""
+echo -e " Pacote do Termux-x11 instalado."
+echo ""
+echo -e " Baixando Rootfs preconfigurado..."
+echo ""
+wget https://github.com/Herick75/Box4Droid/releases/download/0.0.w-alpha/box86-rootfs-v0.0.2.tar.gz
+echo ""
+mv box86-rootfs-v0.0.2.tar.gz $PREFIX/var/lib
+cd $PREFIX/var/lib
+echo -e " Descompactando Rootfs, por favor aguarde..."
+tar -xvf box86-rootfs-v0.0.2.tar.gz &>/dev/null
+echo ""
+echo -e " Rootfs instalado."
+echo ""
+echo -e " Baixando script de inicialização do Rootfs..."
+wget https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/start-box86.sh
+mv start-box86.sh start-box86
+chmod +x start-box86
+mv start-box86 $PREFIX/bin
+echo ""
+echo -e " Script instalado."
+echo ""
+echo -e " Removendo resíduos da instalação..."
+echo ""
+rm -rf box86-rootfs-0.0.1.tar.gz
+rm -rf install.sh
+rm -rf termux-x11-1.02.07-0-all.deb
+
+clear
+echo ""
+echo -e " \x1b[32m\033 Instalação concluída, aqui vão algumas dicas de uso :"
+echo -e ""
+echo -e " Você precisa seguir está ordem para que tudo funcione corretamente : "
+echo ""
+echo -e " Inicie o Termux-x11 digitando 'x11' no terminal."
+echo -e ""
+echo -e " Depois digite 'start-box86' no terminal e em seguida entre no aplicativo do Termux-x11 "
+echo -e ""
+echo -e " E se tudo for como o planejado, o ambiente da Wine vai se iniciar e logo em seguida o TFM irá abrir,pronto."
+echo ""
+echo -e " Quando for parar de usar o servidor x11, é recomendado forçar a parada do Termux pelas configurações.Você tambem pode usar o comando 'kill' + o pid do Termux-X11(para saber o pid,basta escrever termux-x11,e no final vai aparecer o id)"
+echo ""
+echo -e "Isso é tudo."
