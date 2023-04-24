@@ -16,7 +16,7 @@ echo ""
 read -p " ..." option
 
     case $option in
-        [1]* ) . ptbr;break;;
-        [2]* ) . eng;break;;
+        [1]* ) curl -o ptbr https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/Lang/ptbr && chmod +x ptbr && . ptbr;break;;
+        [2]* ) curl -o eng https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/Lang/eng && chmod +x eng && . eng;break;;
     esac
 done
