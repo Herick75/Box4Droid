@@ -1,4 +1,5 @@
 
+clear
 echo ""
 echo -e "\x1b[33m Iniciando instalação automática, aguarde..." & sleep 3
 echo ""
@@ -29,7 +30,7 @@ echo -e " Pacote do Termux-x11 instalado."
 echo ""
 echo -e " Baixando Rootfs preconfigurado..."
 echo ""
-wget https://github.com/Herick75/Box4Droid/releases/download/0.0.w-alpha/box86-rootfs-v0.0.2.tar.gz
+wget https://github.com/Herick75/Box4Droid/releases/download/0.0.2-alpha/box86-rootfs-v0.0.2.tar.gz
 echo ""
 mv box86-rootfs-v0.0.2.tar.gz $PREFIX/var/lib
 cd $PREFIX/var/lib
