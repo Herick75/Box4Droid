@@ -40,7 +40,7 @@ echo ""
 echo -e " Rootfs instalado."
 echo ""
 echo -e " Instalado os scripts na versão Português Brasil..."
-cd $PREFIX/var/lib/proot-distro/installed-rootfs/Ubuntu/opt
+cd $PREFIX/var/lib/proot-distro/installed-rootfs/ubuntu/opt
 wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/Lang/scripts-Ptbr.tar.gz
 tar -xvf scripts-Ptbr.tar.gz
 rm -rf scripts-Ptbr.tar.gz
