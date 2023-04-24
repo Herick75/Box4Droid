@@ -56,9 +56,11 @@ echo -e " Script instalado."
 echo ""
 echo -e " Removendo resíduos da instalação..."
 echo ""
+cd $HOME
 rm -rf box86-rootfs-v0.0.2.tar.gz
-rm -rf install.sh
+rm -rf install
 rm -rf termux-x11-1.02.07-0-all.deb
+rm -rf ptbr
 
 clear
 echo ""
