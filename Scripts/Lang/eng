@@ -9,12 +9,11 @@ termux-setup-storage & sleep 3 &>/dev/null
 while true; do
 if [ -e storage ]; then
 echo " Checking If the Box4Droid Exists on internal storage"
-rm -rf /storage/shared/Box4Droid
+rm -rf storage/shared/Box4Droid
 echo " Done."
 break
 else
-echo " Canceling installation" & sleep 5
-exit 1
+echo " Waiting for command input"
 fi
 done
 pkg update -y
