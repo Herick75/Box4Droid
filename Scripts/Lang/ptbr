@@ -47,6 +47,7 @@ mv box86-rootfs-v0.0.2.tar.gz $PREFIX/var/lib
 cd $PREFIX/var/lib
 echo -e " Descompactando Rootfs, por favor aguarde..."
 tar -xvf box86-rootfs-v0.0.2.tar.gz &>/dev/null
+rm -rf box86-rootfs-v0.0.2.tar.gz
 echo ""
 echo -e " Rootfs instalado."
 echo ""
