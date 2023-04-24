@@ -9,7 +9,7 @@ echo ""
 termux-setup-storage & sleep 3 &>/dev/null
 while true; do
 if [ -e storage ]; then
-echo " Verificando se existe fuma versão antiga da pasta Box4Droid no armazenamento interno."
+echo " Verificando se existe uma versão antiga da pasta Box4Droid no armazenamento interno."
 rm -rf storage/shared/Box4Droid
 echo " Pronto."
 break
