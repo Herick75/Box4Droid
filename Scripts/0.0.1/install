@@ -12,6 +12,8 @@ echo -e " Box4Droid creates a folder called "Box4Droid" at the internal storage 
 echo ""
 termux-setup-storage & sleep 3 &>/dev/null
 pkg update -y
+pkg clean
+pkg update -y
 echo -e " \x1b[33mInstalando x11-repo..."
 echo ""
 echo -e " Installing x11-repo..."
