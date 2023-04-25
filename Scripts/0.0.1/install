@@ -24,7 +24,7 @@ echo -e ""
 echo -e " Baixando e instalando Script de inicialização do servidor x11."
 echo ""
 echo -e " Downloading and Installing x11 Server Script."
-curl -o x11 https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/x11 &>/dev/null
+curl -o x11 https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/0.0.1/x11 &>/dev/null
 chmod +x x11
 mv x11 $PREFIX/bin
 echo -e ""
@@ -61,7 +61,7 @@ echo ""
 echo -e " Baixando script de inicialização do Rootfs..."
 echo ""
 echo -e " Downloading Rootfs init script..."
-wget https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/start-ubuntu.sh
+wget https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/0.0.1/start-ubuntu.sh
 mv start-ubuntu.sh start-box86
 chmod +x start-box86
 mv start-box86 $PREFIX/bin
