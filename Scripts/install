@@ -86,7 +86,7 @@ done
 read -p " ..." option
 
     case $option in
-        [1]* ) selectPtbr;;
-        [2]* ) selectEng;;
+        [1]* ) selectPtbr;break;;
+        [2]* ) selectEng;break;;
     esac
 done
