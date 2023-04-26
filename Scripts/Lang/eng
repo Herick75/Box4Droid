@@ -8,12 +8,15 @@ echo ""
 termux-setup-storage & sleep 3 &>/dev/null
 while true; do
 if [ -e storage ]; then
+echo ""
 echo " Checking if there is an old version of the Box4Droid folder in the internal storage."
+echo ""
 rm -rf storage/shared/Box4Droid
 echo " Done."
 break
 else
 echo " Waiting for command input, If you denied permission, press ctrl + c to exit the loop and cancel the installation."
+echo ""
 fi
 sleep 6
 done
