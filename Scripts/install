@@ -34,6 +34,7 @@ case $ver in
 curl -o install https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/0.0.1/install
 chmod +x install
 ./install
+break
 ;;
 
 2)
@@ -41,6 +42,7 @@ chmod +x install
 curl -o ptbr https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/Lang/ptbr
 chmod +x ptbr
 ./ptbr
+break
 ;;
 
 esac
@@ -70,12 +72,14 @@ curl -o install https://raw.githubusercontent.com/Herick75/Box4Droid/main/Script
 chmod +x install
 ./install
 ;;
+break
 
 2)
 
 curl -o eng https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/Lang/eng
 chmod +x eng
 ./eng
+break
 ;;
 
 esac
