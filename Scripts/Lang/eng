@@ -13,6 +13,7 @@ echo " Checking if there is an old version of the Box4Droid folder in the intern
 echo ""
 rm -rf storage/shared/Box4Droid
 echo " Done."
+echo ""
 break
 else
 echo " Waiting for command input, If you denied permission, press ctrl + c to exit the loop and cancel the installation."
