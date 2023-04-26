@@ -13,6 +13,42 @@ echo ""
 echo " 2)English"
 echo ""
 
+selectPtbr(){
+
+while true; do
+clear
+
+echo " Por favor,selecione uma versão para instalar"
+echo ""
+echo -e " \033[3;36mBox86-rootfs-v0.0.1\033[0m (\033[0;92mEstável\033[0m)"
+echo""
+echo -e " \033[3;36mBox86-rootfs-v0.0.2\033[0m (\033[0;91mInstáve\033[0m)"
+echo ""
+
+read ver
+
+case $ver in
+
+1)
+
+curl -o install https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/0.0.1/install
+chmod +x install
+./install
+;;
+
+2)
+
+curl -o install https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/install
+chmod +x install
+./install
+;;
+esac
+done
+
+}
+
+
+
 read -p " ..." option
 
     case $option in
