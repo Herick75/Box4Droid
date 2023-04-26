@@ -8,9 +8,9 @@ echo ""
 echo " Please select a language :"
 echo ""
 echo ""
-echo " 1)Português-BR"
+echo " 1) Português-BR"
 echo ""
-echo " 2)English"
+echo " 2) English"
 echo ""
 
 selectPtbr(){
