@@ -71,8 +71,8 @@ case $ver in
 curl -o install https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/0.0.1/install
 chmod +x install
 ./install
-;;
 break
+;;
 
 2)
 
