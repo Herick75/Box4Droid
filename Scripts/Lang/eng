@@ -24,7 +24,10 @@ done
 pkg update -y
 #pkg clean to ensure that everything installs without errors
 pkg clean
+echo ""
 echo -e " \x1b[33mChecking for possible errors, please wait a moment..."
+echo ""
+echo -e " Done."
 pkg update -y 
 echo ""
 echo -e "\x1b[33m Installing x11-repo..."
