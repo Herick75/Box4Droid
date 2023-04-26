@@ -38,15 +38,48 @@ chmod +x install
 
 2)
 
-curl -o install https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/install
-chmod +x install
-./install
+curl -o eng https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/Lang/ptbr
+chmod +x ptbr
+./ptbr
 ;;
 esac
 done
 
 }
 
+selectEng(){
+
+while true; do
+clear
+
+echo " Please, select a version to install"
+echo ""
+echo -e " \033[3;36mBox86-rootfs-v0.0.1\033[0m (\033[0;92mStable\033[0m)"
+echo""
+echo -e " \033[3;36mBox86-rootfs-v0.0.2\033[0m (\033[0;91mUnstable\033[0m)"
+echo ""
+
+read ver
+
+case $ver in
+
+1)
+
+curl -o install https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/0.0.1/install
+chmod +x install
+./install
+;;
+
+2)
+
+curl -o eng https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/Lang/eng
+chmod +x eng
+./eng
+;;
+esac
+done
+
+}
 
 
 read -p " ..." option
