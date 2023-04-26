@@ -38,7 +38,7 @@ chmod +x install
 
 2)
 
-curl -o eng https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/Lang/ptbr
+curl -o ptbr https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/Lang/ptbr
 chmod +x ptbr
 ./ptbr
 ;;
