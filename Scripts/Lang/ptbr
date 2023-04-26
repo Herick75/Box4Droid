@@ -21,8 +21,8 @@ done
 pkg update -y
 #pkg clean para ter certeza que tudo vai instalar sem problemas.
 pkg clean
-echo -e " Verificando possíveis erros, aguarde um momento..."
-pkg update -y &>/dev/null
+echo -e " \x1b[33mVerificando possíveis erros, aguarde um momento..."
+pkg update -y
 echo ""
 echo -e " Concluído."
 echo ""
