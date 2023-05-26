@@ -1,0 +1,47 @@
+#! /bin/bash
+
+while true; do
+
+clear
+
+echo ""
+
+echo -e " Last update (dd/mm/yyyy): \033[3;36m21/05/2023\033[0m"
+
+echo ""
+
+echo " Select an option"
+
+echo ""
+
+echo " 1) Box86-v0.3.1-f0691e56 (Default)"
+
+echo " 0) Back"
+
+read opBox
+
+case $opBox in
+
+        1)
+
+        wget https
+
+        dpkg -i box.deb
+
+        . /opt/scripts/box86_versions
+
+        break
+
+        ;;
+
+        0)
+
+        . /opt/scripts/options
+
+        break
+
+        ;;
+
+esac
+
+done
