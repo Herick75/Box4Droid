@@ -6,7 +6,7 @@ clear
 
 echo ""
 
-echo -e " Last update (dd/mm/yyyy): \033[3;36m21/05/2023\033[0m"
+echo -e " Last update (dd/mm/yyyy): \033[3;36m26/05/2023\033[0m"
 
 echo ""
 
