@@ -92,7 +92,13 @@ break
 
 3)
 
-curl -
+curl -O eng https://github.com/Herick75/Box4Droid/raw/main/Scripts/0.0.3/eng
+chmod +x eng
+./eng
+break
+;;
+
+
 
 esac
 done
