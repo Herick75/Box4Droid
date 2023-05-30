@@ -117,6 +117,8 @@ echo -e " \033[0;91mRoot access not found, going back to Proot mode...\033[0m" &
 
 echo ""
 
+cd $HOME/Box4Droid
+
 ./start-ubuntu.sh
 
 fi
