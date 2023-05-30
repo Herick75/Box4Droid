@@ -84,7 +84,7 @@ echo ""
 
 echo -e " Installing VirGL..."
 
-pkg install virglrenderer-android -y &>/dev/nu
+pkg install virglrenderer-android -y &>/dev/null
 
 echo ""
 
