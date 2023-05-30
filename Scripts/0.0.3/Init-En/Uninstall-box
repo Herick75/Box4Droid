@@ -6,7 +6,7 @@ while true; do
     if [ -e $HOME/Box4Droid/ubuntu/opt/chroot ]; then
 	if [ -z "$(sudo ls -A $HOME/Box4Droid/ubuntu/sdcard)" ]; then
 		echo ""
-		echo " Checking for possible containers not unmounted correctly..."
+		echo " Checking for possible partitions not unmounted correctly..."
 		echo ""
 		echo -e "\033[0;92m Done.\033[0m"
 		else
