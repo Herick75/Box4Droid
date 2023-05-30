@@ -134,7 +134,13 @@ echo ""
 
 echo -e " Download Rootfs init scripts..."
 
-wget https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/Lang/start-box86-eng
+wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/0.0.3/Init-En/box
+
+wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/0.0.3/Init-En/start-ubuntu.sh
+
+wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/0.0.3/Init-En/chroot.sh
+
+wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/0.0.3/Init-En/Uninstall-box
 
 mv start-box86-eng start-box86
 
