@@ -186,7 +186,7 @@ echo " You need to follow this order for everything to work correctly : "
 
 echo ""
 
-echo -e " Type 'box' in the terminal, choose a resolution you want to start Termux-x11, and that's it, the Box86 menu will start"
+echo -e " Type 'box' in the terminal, choose a resolution you want to start Termux-x11, and that's it, the Box86 and Box64 menu will start"
 
 echo ""
 
