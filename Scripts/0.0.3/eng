@@ -82,6 +82,10 @@ echo -e "\x1b[33m Downloading and installing Termux-x11 package..."
 
 echo ""
 
+mkdir -p $HOME/Box4Droid
+
+cd $HOME/Box4Droid
+
 wget https://github.com/Herick75/Box4Droid/raw/main/Apps/termux-x11-1.02.07-0-all.deb
 
 dpkg -i termux-x11-1.02.07-0-all.deb &>/dev/null
@@ -96,19 +100,15 @@ echo -e " Downloading Preconfigured Rootfs..."
 
 echo ""
 
+cd $HOME/Box4Droid
+
 wget https://github.com/Herick75/Box4Droid/releases/download/0.0.3-alpha/Box86-Box64-rootfs-v0.0.3.tar.gz
 
 echo ""
 
-mkdir -p $HOME/Box4Droid
-
-mv Box86-Box64-rootfs-v0.0.3.tar.gz $HOME/Box4Droid
-
-cd $HOME/Box4Droid
-
 echo -e " Unzipping Rootfs, please wait..."
 
-tar -xzpf Box86-Box64-rootfs-v0.0.3.tar.gz &>/dev/null
+tar -xzpf Box86-Box64-rootfs-v0.0.3.tar.gz
 
 rm -rf Box86-Box64-rootfs-v0.0.3.tar.gz
 
@@ -126,13 +126,15 @@ wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/0.0.3/scripts-En.tar
 
 tar -xvf scripts-En.tar.gz
 
-rm -rf scritps-En.tar.gz
+rm -rf scripts-En.tar.gz
 
 echo " Scripts installed"
 
 echo ""
 
 echo -e " Download Rootfs init scripts..."
+
+cd $HOME/Box4Droid/
 
 wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/0.0.3/Init-En/box
 
@@ -144,21 +146,19 @@ wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/0.0.3/Init-En/Uninst
 
 chmod +x box
 
-mv box $PREFIX/bin
+mv box $PREFIX/bin/
 
 chmod +x start-ubuntu.sh
 
 chmod +x chroot.sh
 
-mv start-box86-eng start-box86
+chmod +x Uninstall-box
 
-chmod +x start-box86
-
-mv start-box86 $PREFIX/bin
+mv Uninstall-box $PREFIX/bin/
 
 echo ""
 
-echo -e " Script installed."
+echo -e " Scripts installed."
 
 echo ""
 
@@ -166,9 +166,9 @@ echo -e " Removing installation waste..."
 
 echo ""
 
-cd $HOME
+cd $HOME/Box4Droid
 
-rm -rf box86-rootfs-v0.0.2.tar.gz
+rm -rf Box86-Box64-rootfs-v0.0.3.tar.gz
 
 rm -rf install
 
