@@ -150,6 +150,8 @@ tar -xvf scripts-En.tar.gz
 
 rm -rf scripts-En.tar.gz
 
+sed -i "108s/.*/export Lang=Eng/" $HOME/Box4Droid/ubuntu/root/.bashrc;
+
 echo " Scripts installed"
 
 echo ""
