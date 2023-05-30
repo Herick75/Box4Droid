@@ -30,6 +30,7 @@ tar -xvf scripts-Ptbr.tar.gz
 rm -rf scripts-Ptbr.tar.gz
 echo " Atualizado !"
 exit 0
+break
 fi
 fi
 
