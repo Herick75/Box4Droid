@@ -190,8 +190,18 @@ echo -e " Type 'box' in the terminal, choose a resolution you want to start Term
 
 echo ""
 
-echo -e " "
+echo -e " You can also use some parameters in the 'box' command, here they are:"
 
 echo ""
+
+echo -e " box --help will show help page"
+
+echo ""
+
+echo -e " box --update will update all scripts to last modifications"
+
+echo ""
+
+echo -e " Uninstall-box will completely remove all files from Box4Droid, including RootFS, Box4Droid folder on internal storage and scripts."
 
 echo -e "That's all"
