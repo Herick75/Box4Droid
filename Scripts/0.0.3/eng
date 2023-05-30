@@ -142,6 +142,19 @@ wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/0.0.3/Init-En/chroot
 
 wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/0.0.3/Init-En/Uninstall-box
 
+chmod +x box
+
+mv box $PREFIX/bin
+
+chmod +x start-ubuntu.sh
+
+
+
+chmod +x chroot.sh
+
+
+
+
 mv start-box86-eng start-box86
 
 chmod +x start-box86
