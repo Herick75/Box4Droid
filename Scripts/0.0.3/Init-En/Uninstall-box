@@ -1,0 +1,74 @@
+#!/bin/bash
+
+while true; do
+    clear
+
+    if [ -e $HOME/Box4Droid/ubuntu/opt/chroot ]; then
+	if [ -z "$(sudo ls -A $HOME/Box4Droid/ubuntu/sdcard)" ]; then
+		echo ""
+		echo " Checking for possible containers not unmounted correctly..."
+		echo ""
+		echo -e "\033[0;92m Done.\033[0m"
+		else
+		echo ""
+                echo " Checking for possible containers not unmounted correctly..."
+                echo ""
+                echo -e "\033[0;91m Failed !!!.\033[0m"
+		echo ""
+		echo -e "\033[1;91m Some system directories are still mounted in RootFS, please RESTART the device before deleting RootFS, otherwise you will format your device and it may be in Bootloop/hardBrick/infinite loop.\033[0m"
+		echo ""
+		break
+	fi
+
+        echo ""
+        echo " It has been detected that you have already started RootFS at least once using Chroot. In this case, a different approach is needed for the uninstall to complete without errors. Super User access is required for complete removal. Continue?"
+        sleep 5
+        echo ""
+        echo " 1) Continue"
+        echo " 0) Cancel"
+        echo ""
+
+        read opt
+
+        case $opt in
+            1)
+                echo "Removing ..."
+                sudo rm -rf /data/data/com.termux/files/home/Box4Droid/
+		rm -rf $HOME/storage/shared/Box4Droid
+		rm -rf $PREFIX/bin/box
+		echo "Done."
+		rm -rf $PREFIX/bin/Uninstall-box
+                break
+                ;;
+            0)
+                echo "Canceling ..."
+                break
+                ;;
+        esac
+    else
+        echo ""
+        echo " Do you want to delete data concerning Box4Droid (Including Box4Droid folder in internal storage and RootFS)?"
+        echo ""
+        echo " 1) Continue"
+        echo " 0) Cancel"
+        echo ""
+
+        read opt
+
+        case $opt in
+            1)
+                echo "Removing ..."
+                rm -rf $HOME/Box4Droid/
+		rm -rf $HOME/storage/shared/Box4Droid
+		rm -rf $PREFIX/bin/box
+		echo "Done."
+		rm -rf $PREFIX/bin/Unistall-box
+                break
+                ;;
+            0)
+                echo "Canceling ..."
+                break
+                ;;
+        esac
+    fi
+done
