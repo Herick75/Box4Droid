@@ -96,7 +96,7 @@ echo -e " Downloading Preconfigured Rootfs..."
 
 echo ""
 
-wget https://github.com/Herick75/Box4Droid/releases/download/0.0.3-alpha/box86-64-rootfs-v0.0.3.tar.gz
+wget https://github.com/Herick75/Box4Droid/releases/download/0.0.3-alpha/Box86-Box64-rootfs-v0.0.3.tar.gz
 
 echo ""
 
@@ -148,12 +148,7 @@ mv box $PREFIX/bin
 
 chmod +x start-ubuntu.sh
 
-
-
 chmod +x chroot.sh
-
-
-
 
 mv start-box86-eng start-box86
 
