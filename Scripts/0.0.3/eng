@@ -122,7 +122,7 @@ echo -e " Installing scripts in the English language"
 
 cd $HOME/Box4Droid/ubuntu/opt
 
-wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/Lang/scripts-En.tar.gz
+wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/0.0.3/scripts-En.tar.gz
 
 tar -xvf scripts-En.tar.gz
 
@@ -132,7 +132,7 @@ echo " Scripts installed"
 
 echo ""
 
-echo -e " Download Rootfs init script..."
+echo -e " Download Rootfs init scripts..."
 
 wget https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/Lang/start-box86-eng
 
