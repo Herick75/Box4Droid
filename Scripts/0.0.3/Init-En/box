@@ -11,8 +11,11 @@ echo ""
 echo " Here are some parameters to use: "
 echo ""
 echo "  --help              Show a help page."
+echo ""
 echo "  --update            Update the scripts to the latest available version"
+echo ""
 echo "  Uninstall-box       It will completely remove all Box4Droid related data (RootFS and Box4Droid folder)"
+echo ""
 exit 0
 elif [ "$1" = "--update" ]; then
 if [ "$(sed '106q;d' $Rootfs/root/.bashrc)" = "export Lang=eng" ]; then
@@ -28,6 +31,10 @@ cd $Rootfs/opt/
 wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/0.0.3/scripts-Ptbr.tar.gz
 tar -xvf scripts-Ptbr.tar.gz
 rm -rf scripts-Ptbr.tar.gz
+cd
+wget 
+
+echo ""
 echo " Atualizado !"
 exit 0
 break
