@@ -96,19 +96,21 @@ echo -e " Downloading Preconfigured Rootfs..."
 
 echo ""
 
-wget https://github.com/Herick75/Box4Droid/releases/download/0.0.2-alpha/box86-rootfs-v0.0.2.tar.gz
+wget https://github.com/Herick75/Box4Droid/releases/download/0.0.3-alpha/box86-64-rootfs-v0.0.3.tar.gz
 
 echo ""
 
-mv box86-rootfs-v0.0.2.tar.gz $PREFIX/var/lib
+mkdir -p $HOME/Box4Droid
 
-cd $PREFIX/var/lib
+mv Box86-Box64-rootfs-v0.0.3.tar.gz $HOME/Box4Droid
+
+cd $HOME/Box4Droid
 
 echo -e " Unzipping Rootfs, please wait..."
 
-tar -xvf box86-rootfs-v0.0.2.tar.gz &>/dev/null
+tar -xzpf Box86-Box64-rootfs-v0.0.3.tar.gz &>/dev/null
 
-rm -rf box86-rootfs-v0.0.2.tar.gz
+rm -rf Box86-Box64-rootfs-v0.0.3.tar.gz
 
 echo ""
 
@@ -118,7 +120,7 @@ echo ""
 
 echo -e " Installing scripts in the English language"
 
-cd $PREFIX/var/lib/proot-distro/installed-rootfs/ubuntu/opt
+cd $HOME/Box4Droid/ubuntu/opt
 
 wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/Lang/scripts-En.tar.gz
 
