@@ -47,9 +47,9 @@ chmod +x ptbr
 break
 ;;
 
-3)
+#3)
 
-curl -o
+#curl -o
 esac
 done
 
