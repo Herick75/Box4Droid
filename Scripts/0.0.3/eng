@@ -206,4 +206,6 @@ echo ""
 
 echo -e " Uninstall-box will completely remove all files from Box4Droid, including RootFS, Box4Droid folder on internal storage and scripts."
 
+echo ""
+
 echo -e "That's all"
