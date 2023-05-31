@@ -24,7 +24,7 @@ echo -e " 1) \033[3;36mBox86-rootfs-v0.0.1\033[0m (\033[0;92mEstável\033[0m)"
 echo""
 echo -e " 2) \033[3;36mBox86-rootfs-v0.0.2\033[0m (\033[0;91mInstável\033[0m)"
 echo ""
-echo -e " 3) \033[3;36mBox86-Box64-rootfs-v0.0.3\033[0m (\033[0;92mEstável\033[0m)"
+echo -e " 3) \033[3;36mBox86-Box64-rootfs-v0.0.3\033[0m (\033[0;33mTestando\033[0m)"
 echo ""
 
 read ver
@@ -66,7 +66,7 @@ echo -e " 1) \033[3;36mBox86-rootfs-v0.0.1\033[0m (\033[0;92mStable\033[0m)"
 echo""
 echo -e " 2) \033[3;36mBox86-rootfs-v0.0.2\033[0m (\033[0;91mUnstable\033[0m)"
 echo ""
-echo -e " 3) \033[3;36mBox86-Box64-rootfs-v0.0.3\033[0m (\033[0;92mStable\033[0m)"
+echo -e " 3) \033[3;36mBox86-Box64-rootfs-v0.0.3\033[0m (\033[0;33mTesting\033[0m)"
 echo ""
 
 
