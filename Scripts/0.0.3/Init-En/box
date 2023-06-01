@@ -72,7 +72,7 @@ echo ""
 	[0]* ) exit 0;break;;
     esac
 done
-DISPLAY=:1 termux-x11 &>/dev/null & env DISPLAY=:1 Xvfb -listen tcp :1 -ac -screen 0 $res &>/dev/null & pulseaudio --start --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" --exit-idle-time=-1 &>/dev/null
+termux-x11 :1 &>/dev/null & pulseaudio --start --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" --exit-idle-time=-1
 
 
 if [ "$(sed '108q;d' $HOME/Box4Droid/ubuntu/root/.bashrc)" = "export SCRIPT=proot" ]; then
