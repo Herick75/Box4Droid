@@ -10,7 +10,7 @@ No, Box4Droid uses proot to run Rootfs, so no, root is not required.
 
 # How to install?  
 
-First you need to install [Termux](https://f-droid.org/en/packages/com.termux) and [Termux-x11](https://github.com/termux/termux-x11/actions/runs/4385798707).  After installing them, just copy the command `curl -o install https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/install && chmod +x install && ./install` and paste it in the Termux terminal and wait until the installation completes.
+First you need to install [Termux](https://f-droid.org/en/packages/com.termux) and [Termux-x11](https://github.com/Herick75/Box4Droid/releases/download/0.0.3-alpha/Termux-x11.apk).  After installing them, just copy the command `curl -o install https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/install && chmod +x install && ./install` and paste it in the Termux terminal and wait until the installation completes.
 
 # How to start Box86 + Wine?
 
