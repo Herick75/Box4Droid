@@ -25,6 +25,12 @@ wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/0.0.3/scripts-En.tar
 tar -xvf scripts-En.tar.gz
 rm -rf scripts-En.tar.gz
 cd $HOME
+
+rm -rf box
+rm -rf Uninstall-box
+rm -rf start-ubuntu.sh
+rm -rf chroot.sh
+
 wget https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/0.0.3/Init-En/Uninstall-box
 wget https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/0.0.3/Init-En/box
 wget https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/0.0.3/Init-En/start-ubuntu.sh
@@ -41,6 +47,7 @@ rm -rf $PREFIX/bin/Uninstall-box
 cp start-ubuntu.sh chroot.sh $HOME/Box4Droid
 cp Uninstall-box $PREFIX/bin
 cat box > $PREFIX/bin/box
+rm -rf box
 
 echo " Updated !"
 elif [ "$(sed '106q;d' $Rootfs/root/.bashrc)" = "export Lang=ptbr" ]; then
