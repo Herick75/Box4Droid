@@ -7,6 +7,17 @@ export HOME=/root
 export LANGUAGE=C
 export LANG=C
 folder=/data/data/com.termux/files/home/Box4Droid/ubuntu-fs
+
+if [ -e $folder/sdcard ]; then
+
+echo ""
+
+else
+
+mkdir $folder/sdcard
+
+fi
+
 echo -e "\033[0;93m Mounting partitions ..."
 echo " Mounting /dev ... "
 sudo mount --bind /dev $folder/dev
@@ -16,6 +27,9 @@ echo " Mounting /proc ..."
 sudo mount --bind /proc $folder/proc
 echo " Mounting /dev/pts ... "
 sudo mount --bind /dev/pts $folder/dev/pts
+echo " Mounting /tmp ..."
+
+sudo mount --bind /data/data/com.termux/files/usr/tmp $folder/tmp
 echo " Mounting /sdcard ... "
 sudo mount --bind /storage/emulated/0/ $folder/sdcard
 echo -e "\033[0;92m Mounting Done ! \033[0m"
@@ -31,6 +45,8 @@ echo -e " Unmounting /dev ... "
 sudo umount $folder/dev
 echo -e " Unmounting /proc ... "
 sudo umount $folder/proc
+echo -e " Ummounting /tmp ..."
+sudo umount $folder/tmp
 echo -e " Unmounting sdcard ... "
 sudo umount $folder/sdcard
 echo -e " Unmounting /sys ... "
