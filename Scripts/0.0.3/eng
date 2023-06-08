@@ -142,7 +142,7 @@ echo ""
 
 echo -e " Installing scripts in the English language"
 
-cd $HOME/Box4Droid/ubuntu/opt
+cd $HOME/Box4Droid/ubuntu-fs/opt
 
 wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/0.0.3/scripts-En.tar.gz
 
