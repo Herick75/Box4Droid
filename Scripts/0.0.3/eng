@@ -203,6 +203,8 @@ rm -rf $HOME/ptbr
 
 rm -rf $HOME/eng
 
+rm -rf $HOME/Box4Droid/ubuntu-fs/tmp/.wine-0
+
 clear
 
 echo ""
