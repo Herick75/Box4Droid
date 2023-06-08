@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export Rootfs="$HOME/Box4Droid/ubuntu/"
+export Rootfs="$HOME/Box4Droid/ubuntu-fs/"
 
 string='export VK_ICD_FILENAMES="/opt/turnip-zink/arm64/share/vulkan/icd.d/freedreno_icd.aarch64.json:/opt/turnip-zink/armhf/share/vulkan/icd.d/freedreno_icd.armv8.2l.json"'
 
