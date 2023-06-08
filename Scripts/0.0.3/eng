@@ -124,15 +124,15 @@ echo ""
 
 cd $HOME/Box4Droid
 
-wget https://github.com/Herick75/Box4Droid/releases/download/0.0.3-alpha/Box86-Box64-rootfs-v0.0.3.tar.gz
+wget https://github.com/Herick75/Box4Droid/releases/download/0.0.3-alpha/Box86-Box64-rootfs-v0.0.3.tar.xz
 
 echo ""
 
 echo -e " Unzipping Rootfs, please wait..."
 
-tar -xf Box86-Box64-rootfs-v0.0.3.tar.gz
+tar -xf Box86-Box64-rootfs-v0.0.3.tar.xz
 
-rm -rf Box86-Box64-rootfs-v0.0.3.tar.gz
+rm -rf Box86-Box64-rootfs-v0.0.3.tar.xz
 
 echo ""
 
@@ -150,7 +150,7 @@ tar -xvf scripts-En.tar.gz
 
 rm -rf scripts-En.tar.gz
 
-sed -i "106s/.*/export Lang=eng/" $HOME/Box4Droid/ubuntu/root/.bashrc;
+sed -i "106s/.*/export Lang=eng/" $HOME/Box4Droid/ubuntu-fs/root/.bashrc;
 
 echo " Scripts installed"
 
@@ -192,7 +192,7 @@ echo ""
 
 cd $HOME/Box4Droid
 
-rm -rf Box86-Box64-rootfs-v0.0.3.tar.gz
+rm -rf Box86-Box64-rootfs-v0.0.3.tar.xz
 
 rm -rf install
 
