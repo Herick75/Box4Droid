@@ -3,8 +3,8 @@
 while true; do
     clear
 
-    if [ -e $HOME/Box4Droid/ubuntu/opt/chroot ]; then
-	if [ -z "$(sudo ls -A $HOME/Box4Droid/ubuntu/sdcard)" ]; then
+    if [ -e $HOME/Box4Droid/ubuntu-fs/opt/chroot ]; then
+	if [ -z "$(sudo ls -A $HOME/Box4Droid/ubuntu-fs/sdcard)" ]; then
 		echo ""
 		echo " Checking for possible partitions not unmounted correctly..."
 		echo ""
