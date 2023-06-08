@@ -75,11 +75,11 @@ done
 termux-x11 :1 &>/dev/null & pulseaudio --start --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" --exit-idle-time=-1
 
 
-if [ "$(sed '108q;d' $HOME/Box4Droid/ubuntu/root/.bashrc)" = "export SCRIPT=proot" ]; then
+if [ "$(sed '108q;d' $HOME/Box4Droid/ubuntu-fs/root/.bashrc)" = "export SCRIPT=proot" ]; then
 
 cd $HOME/Box4Droid/
 
-if [ "$(sed '100q;d' $HOME/Box4Droid/ubuntu/root/.bashrc)" = "export GALLIUM_DRIVER=virpipe" ]; then
+if [ "$(sed '100q;d' $HOME/Box4Droid/ubuntu-fs/root/.bashrc)" = "export GALLIUM_DRIVER=virpipe" ]; then
 
 MESA_NO_ERROR=1 MESA_GL_VERSION_OVERRIDE=4.3COMPAT MESA_GLES_VERSION_OVERRIDE=3.2 virgl_test_server_android &
 
