@@ -89,7 +89,7 @@ fi
 
 pkill Xvfb
 
-if [ "$(sed '100q;d' $HOME/Box4Droid/ubuntu/root/.bashrc)" = "export GALLIUM_DRIVER=virpipe" ]; then
+if [ "$(sed '100q;d' $HOME/Box4Droid/ubuntu-fs/root/.bashrc)" = "export GALLIUM_DRIVER=virpipe" ]; then
 
 pkill virgl_test_serv
 
@@ -97,7 +97,7 @@ fi
 
 pkill -f "app_process / com.termux.x11"
 
-elif [ "$(sed '108q;d' $HOME/Box4Droid/ubuntu/root/.bashrc)" = "export SCRIPT=chroot" ]; then
+elif [ "$(sed '108q;d' $HOME/Box4Droid/ubuntu-fs/root/.bashrc)" = "export SCRIPT=chroot" ]; then
 
 if [ "$(sudo id -u)" == "0" ]; then
 
@@ -135,9 +135,9 @@ pkill -f "app_process / com.termux.x11"
 
 pkill Xvfb
 
-elif [ "$(sed '108q;d' $HOME/Box4Droid/ubuntu/root/.bashrc)" = "export SCRIPT=prootdistro" ]; then
+elif [ "$(sed '108q;d' $HOME/Box4Droid/ubuntu-fs/root/.bashrc)" = "export SCRIPT=prootdistro" ]; then
 
-if [ "$(sed '100q;d' $HOME/Box4Droid/ubuntu/root/.bashrc)" = "export GALLIUM_DRIVER=virpipe" ]; then
+if [ "$(sed '100q;d' $HOME/Box4Droid/ubuntu-fs/root/.bashrc)" = "export GALLIUM_DRIVER=virpipe" ]; then
 
 MESA_NO_ERROR=1 MESA_GL_VERSION_OVERRIDE=4.3COMPAT MESA_GLES_VERSION_OVERRIDE=3.2 virgl_test_server_android &
 
@@ -150,7 +150,7 @@ proot-distro login ubuntu --isolated --bind /sdcard:/sdcard --shared-tmp
 fi
 
 
-if [ "$(sed '100q;d' $HOME/Box4Droid/ubuntu/root/.bashrc)" = "export GALLIUM_DRIVER=virpipe" ]; then
+if [ "$(sed '100q;d' $HOME/Box4Droid/ubuntu-fs/root/.bashrc)" = "export GALLIUM_DRIVER=virpipe" ]; then
 
 pkill virgl_test_serv
 
