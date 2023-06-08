@@ -56,11 +56,12 @@ echo -e " \x1b[33mChecking for possible errors, please wait a moment..."
 
 echo ""
 
-echo -e " Done."
 
 pkg update -y 
 
 echo ""
+
+echo -e " Done."
 
 echo -e "\x1b[33m Installing x11-repo..."
 
