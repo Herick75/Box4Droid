@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export Rootfs="$HOME/Box4Droid/ubuntu-fs/"
+export Rootfs="$PREFIX/var/lib/proot-distro/installed-rootfs/ubuntu"
 export lastRes=""
 string='export VK_ICD_FILENAMES="/opt/turnip-zink/arm64/share/vulkan/icd.d/freedreno_icd.aarch64.json:/opt/turnip-zink/armhf/share/vulkan/icd.d/freedreno_icd.armv8.2l.json"'
 
@@ -147,11 +147,11 @@ done
 termux-x11 :1 &>/dev/null & pulseaudio --start --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" --exit-idle-time=-1
 
 
-if [ "$(sed '108q;d' $HOME/Box4Droid/ubuntu-fs/root/.bashrc)" = "export SCRIPT=proot" ]; then
+if [ "$(sed '108q;d' $Rootfs/root/.bashrc)" = "export SCRIPT=proot" ]; then
 
 cd $HOME/Box4Droid/
 
-if [ "$(sed '100q;d' $HOME/Box4Droid/ubuntu-fs/root/.bashrc)" = "export GALLIUM_DRIVER=virpipe" ]; then
+if [ "$(sed '100q;d' $Rootfs/root/.bashrc)" = "export GALLIUM_DRIVER=virpipe" ]; then
 
 MESA_NO_ERROR=1 MESA_GL_VERSION_OVERRIDE=4.3COMPAT MESA_GLES_VERSION_OVERRIDE=3.2 virgl_test_server_android &
 
@@ -161,7 +161,7 @@ fi
 
 pkill Xvfb
 
-if [ "$(sed '100q;d' $HOME/Box4Droid/ubuntu-fs/root/.bashrc)" = "export GALLIUM_DRIVER=virpipe" ]; then
+if [ "$(sed '100q;d' $Rootf/root/.bashrc)" = "export GALLIUM_DRIVER=virpipe" ]; then
 
 pkill virgl_test_serv
 
@@ -169,7 +169,7 @@ fi
 
 pkill -f "app_process / com.termux.x11"
 
-elif [ "$(sed '108q;d' $HOME/Box4Droid/ubuntu-fs/root/.bashrc)" = "export SCRIPT=chroot" ]; then
+elif [ "$(sed '108q;d' $Rootfs/root/.bashrc)" = "export SCRIPT=chroot" ]; then
 
 if [ "$(sudo id -u)" == "0" ]; then
 
@@ -207,13 +207,13 @@ pkill -f "app_process / com.termux.x11"
 
 pkill Xvfb
 
-elif [ "$(sed '108q;d' $HOME/Box4Droid/ubuntu-fs/root/.bashrc)" = "export SCRIPT=prootdistro" ]; then
+elif [ "$(sed '108q;d' $Rootfs/root/.bashrc)" = "export SCRIPT=prootdistro" ]; then
 
-if [ "$(sed '100q;d' $HOME/Box4Droid/ubuntu-fs/root/.bashrc)" = "export GALLIUM_DRIVER=virpipe" ]; then
+if [ "$(sed '100q;d' $Rootfs/root/.bashrc)" = "export GALLIUM_DRIVER=virpipe" ]; then
 
 MESA_NO_ERROR=1 MESA_GL_VERSION_OVERRIDE=4.3COMPAT MESA_GLES_VERSION_OVERRIDE=3.2 virgl_test_server_android &
 
-proot-distro login ubuntu --isolated --bind /sdcard:/sdcard --bind $PREFIX/tmp/.virgl_test:/tmp/.virgl_test --bind $PREFIX/tmp/.X11-unix:/tmp/.X11-unix --bind $PREFIX/tmp/.wine-0:/tmp/.wine-0 --no-sysvipc
+proot-distro login ubuntu --isolated --bind /sdcard:/sdcard --bind $PREFIX/tmp/.virgl_test:/tmp/.virgl_test --bind $PREFIX/tmp/.X11-unix:/tmp/.X11-unix --no-sysvipc
 
 else
 
