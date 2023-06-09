@@ -222,7 +222,7 @@ proot-distro login ubuntu --isolated --bind /sdcard:/sdcard --shared-tmp
 fi
 
 
-if [ "$(sed '100q;d' $HOME/Box4Droid/ubuntu-fs/root/.bashrc)" = "export GALLIUM_DRIVER=virpipe" ]; then
+if [ "$(sed '100q;d' $Rootfs/root/.bashrc)" = "export GALLIUM_DRIVER=virpipe" ]; then
 
 pkill virgl_test_serv
 
