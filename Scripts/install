@@ -92,7 +92,7 @@ break
 
 3)
 
-bcurl -o eng https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/0.0.3/eng
+curl -o eng https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/0.0.3/eng
 chmod +x eng
 ./eng
 break
