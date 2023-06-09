@@ -131,7 +131,7 @@ echo ""
 
 echo -e " Unzipping Rootfs, please wait..."
 
-tar -xf Box86-Box64-rootfs-v0.0.3.tar.xz
+tar -xJf Box86-Box64-rootfs-v0.0.3.tar.xz
 
 rm -rf Box86-Box64-rootfs-v0.0.3.tar.xz
 
