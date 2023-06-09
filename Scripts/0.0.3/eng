@@ -226,3 +226,4 @@ echo -e " Uninstall-box will completely remove all files from Box4Droid, includi
 echo ""
 
 echo -e "That's all"
+mkdir -p $PREFIX/var/lib/proot-distro/installed-rootfs/ubuntu/sdcard
