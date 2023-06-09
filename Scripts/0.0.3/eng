@@ -63,6 +63,8 @@ echo ""
 
 echo -e " Done."
 
+echo ""
+
 echo -e "\x1b[33m Installing x11-repo..."
 
 pkg install x11-repo -y &>/dev/null
@@ -83,21 +85,11 @@ echo -e " root-repo installed."
 
 echo ""
 
-echo -e " Installing VirGL..."
-
-pkg install virglrenderer-android -y &>/dev/null
-
-echo ""
-
-echo -e " VirGL installed."
-
-echo ""
-
 echo -e " Installing additional packages..."
 
 echo ""
 
-pkg install pulseaudio xwayland proot wget -y
+pkg install pulseaudio xwayland proot-distro wget -y
 
 echo ""
 
@@ -123,7 +115,9 @@ echo -e " Downloading Preconfigured Rootfs..."
 
 echo ""
 
-cd $HOME/Box4Droid
+mkdir -p $PREFIX/var/lib/proot-distro/installed-rootfs
+
+cd $PREFIX/var/lib/proot-distro/installed-rootfs
 
 wget https://github.com/Herick75/Box4Droid/releases/download/0.0.3-alpha/Box86-Box64-rootfs-v0.0.3.tar.xz
 
@@ -131,9 +125,9 @@ echo ""
 
 echo -e " Unzipping Rootfs, please wait..."
 
-tar -xJf Box86-Box64-rootfs-v0.0.3.tar.xz
+proot-distro restore Box86-Box64-rootfs-v0.0.3.tar.xz
 
-rm -rf Box86-Box64-rootfs-v0.0.3.tar.xz
+rm -rf $PREFIX/var/lib/proot-distro/installed-rootfs/Box86-Box64-rootfs-v0.0.3.tar.xz
 
 echo ""
 
@@ -143,7 +137,7 @@ echo ""
 
 echo -e " Installing scripts in the English language"
 
-cd $HOME/Box4Droid/ubuntu-fs/opt
+cd $PREFIX/var/lib/proot-distro/installed-rootfs/ubuntu/opt
 
 wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/0.0.3/scripts-En.tar.gz
 
@@ -151,7 +145,7 @@ tar -xvf scripts-En.tar.gz
 
 rm -rf scripts-En.tar.gz
 
-sed -i "106s/.*/export Lang=eng/" $HOME/Box4Droid/ubuntu-fs/root/.bashrc;
+sed -i "106s/.*/export Lang=eng/" $PREFIX/var/lib/proot-distro/installed-rootfs/ubuntu/root/.bashrc;
 
 echo " Scripts installed"
 
@@ -193,8 +187,6 @@ echo ""
 
 cd $HOME/Box4Droid
 
-rm -rf Box86-Box64-rootfs-v0.0.3.tar.xz
-
 rm -rf $HOME/install
 
 rm -rf termux-x11-1.02.07-0-all.deb
@@ -202,8 +194,6 @@ rm -rf termux-x11-1.02.07-0-all.deb
 rm -rf $HOME/ptbr
 
 rm -rf $HOME/eng
-
-rm -rf $HOME/Box4Droid/ubuntu-fs/tmp/.wine-0
 
 clear
 
