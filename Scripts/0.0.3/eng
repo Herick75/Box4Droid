@@ -227,3 +227,4 @@ echo ""
 
 echo -e "That's all"
 mkdir -p $PREFIX/var/lib/proot-distro/installed-rootfs/ubuntu/sdcard
+sed -i "108s|.*|export SCRIPT=$reso|" $Rootfs/root/.bashrc;
