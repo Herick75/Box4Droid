@@ -125,7 +125,7 @@ echo ""
 
 echo -e " Unzipping Rootfs, please wait..."
 
-proot-distro restore Box86-Box64-rootfs-v0.0.3.tar.xz
+proot-distro restore Box86-Box64-rootfs-v0.0.3.tar.xz &>/dev/null
 
 rm -rf $PREFIX/var/lib/proot-distro/installed-rootfs/Box86-Box64-rootfs-v0.0.3.tar.xz
 
