@@ -113,7 +113,7 @@ sed -i "4s|.*|export lastRes=$reso|" $PREFIX/bin/box;
 
 else
 
-echo -e " A ultima resolucão digitada foi \033[3;36m $lastRes\033[0m , para usar ela novamente,apenas pressione enter de novo."
+echo -e " A ultima resolucão digitada foi \033[3;36m $lastRes\033[0m , para usá-la novamente,apenas pressione enter de novo."
 echo ""
 
 read reso
