@@ -6,7 +6,7 @@ export USER=root
 export HOME=/root
 export LANGUAGE=C
 export LANG=C
-folder=/data/data/com.termux/files/home/Box4Droid/ubuntu-fs
+folder=/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/box4droid
 
 if [ -e $folder/sdcard ]; then
 echo ""
