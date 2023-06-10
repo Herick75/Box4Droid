@@ -144,7 +144,7 @@ echo ""
 	[0]* ) exit 0;break;;
     esac
 done
-termux-x11 :1 &>/dev/null & pulseaudio --start --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" --exit-idle-time=-1
+termux-x11 :1 &>/dev/null & pulseaudio --start --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" --exit-idle-time=-1 & sleep 1
 
 
 if [ "$(sed '108q;d' $Rootfs/root/.bashrc)" = "export SCRIPT=proot" ]; then
@@ -197,9 +197,8 @@ echo -e " \033[0;91mRoot access not found, going back to Proot mode...\033[0m" &
 
 echo ""
 
-cd $HOME/Box4Droid
 
-./start-ubuntu.sh
+
 
 fi
 
@@ -217,7 +216,7 @@ proot-distro login box4droid --isolated --bind /sdcard:/sdcard --bind $PREFIX/tm
 
 else
 
-proot-distro login box4droid --isolated --bind /sdcard:/sdcard --bind $PREFIX/tmp/.X11-unix/:/tmp/.X11-unix --bind $PREFIX/tmp/.X1-lock:/tmp/.X1-lock & sleep 1
+proot-distro login box4droid --isolated --bind /sdcard:/sdcard --bind $PREFIX/tmp/.X11-unix/:/tmp/.X11-unix --bind $PREFIX/tmp/.X1-lock:/tmp/.X1-lock
 
 fi
 
