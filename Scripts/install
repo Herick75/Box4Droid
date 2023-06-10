@@ -47,9 +47,15 @@ chmod +x ptbr
 break
 ;;
 
-#3)
+3)
 
-#curl -o
+curl -o ptbr https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/0.0.3/ptbr
+chmod +x ptbr
+./ptbr
+break
+;;
+
+
 esac
 done
 
