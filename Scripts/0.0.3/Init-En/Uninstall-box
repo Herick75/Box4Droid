@@ -37,7 +37,7 @@ while true; do
 		sudo rm -rf /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/box4droid
 		rm -rf $HOME/storage/shared/Box4Droid
 		rm -rf $PREFIX/bin/box
-		echo "Done."
+		echo -e " \033[0;92mDone\033[0m."
 		rm -rf $PREFIX/bin/Uninstall-box
                 break
                 ;;
@@ -63,7 +63,7 @@ while true; do
 		proot-distro remove ubuntu
 		rm -rf $HOME/storage/shared/Box4Droid
 		rm -rf $PREFIX/bin/box
-		echo "Done."
+		echo -e " \033[0;92mDone\033[0m."
 		rm -rf $PREFIX/bin/Uninstall-box
                 break
                 ;;
