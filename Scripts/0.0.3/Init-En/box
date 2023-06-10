@@ -197,7 +197,7 @@ echo -e " \033[0;91mRoot access not found, going back to Proot mode...\033[0m" &
 
 echo ""
 
-
+proot-distro login box4droid --isolated --bind /sdcard:/sdcard --bind $PREFIX/tmp/.X11-unix/:/tmp/.X11-unix --bind $PREFIX/tmp/.X1-lock:/tmp/.X1-lock
 
 
 fi
