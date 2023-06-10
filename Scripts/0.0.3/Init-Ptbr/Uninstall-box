@@ -62,6 +62,7 @@ while true; do
                 rm -rf $HOME/Box4Droid/
 		rm -rf $HOME/storage/shared/Box4Droid
 		rm -rf $PREFIX/bin/box
+		proot-distro remove box4droid
 		echo "Concluído."
 		rm -rf $PREFIX/bin/Unistall-box
                 break
