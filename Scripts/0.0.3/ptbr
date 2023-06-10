@@ -1,0 +1,241 @@
+clear
+
+echo ""
+
+echo -e "\x1b[33m Iniciando instalacão automática,por favor aguarde ..." & sleep 3
+
+echo ""
+
+clear
+
+echo -e "\x1b[33m Box4Droid cria uma pasta chamada "Box4Droid" no armazenamento interno para armazenar arquivos de configuração.  Para o Termux criar esta pasta é necessário ter permissões de armazenamento.Após 6 segundos aparecerá o pedido de permissão, clique em permitir para prosseguir (ou negar e aperte CTRL + c para cancelar a instalação) ." & sleep 9 &>/dev/null
+
+echo ""
+
+termux-setup-storage & sleep 3 &>/dev/null
+
+while true; do
+
+if [ -e storage ]; then
+
+echo ""
+
+echo " Verificando se existe uma versão antiga da pasta Box4Droid no armazenamento interno."
+
+echo ""
+
+rm -rf storage/shared/Box4Droid
+
+echo " Concluído."
+
+echo ""
+
+break
+
+else
+
+echo " Aguardando a entrada do comando, se você negou a permissão, pressione ctrl + c para sair do loop e cancelar a instalação."
+
+echo ""
+
+fi
+
+sleep 6
+
+done
+
+pkg update -y
+
+#pkg clean to ensure that everything installs without errors
+
+pkg clean
+
+echo ""
+
+echo -e " \x1b[33mVerificando por possíveis erros, aguarde um momento..."
+
+echo ""
+
+
+pkg update -y 
+
+echo ""
+
+echo -e " Concluído."
+
+echo ""
+
+echo -e "\x1b[33m Instalando x11-repo..."
+
+pkg install x11-repo -y
+
+echo -e "\x1b[33m Installing root-repo..."
+
+pkg install root-repo -y
+
+echo -e " Instalando tsu para chroot..."
+
+pkg install tsu -y
+
+echo -e " X11-repo instalado."
+
+echo ""
+
+echo -e " root-repo instalado."
+
+echo ""
+
+echo -e " Instalando pacotes adicionais..."
+
+echo ""
+
+pkg install xorg-server-xvfb pulseaudio xwayland proot-distro wget -y
+
+echo ""
+
+echo -e "\x1b[33m Baixando e instalando o pacote do Termux-x11 ..."
+
+echo ""
+
+mkdir -p $HOME/Box4Droid
+
+cd $HOME/Box4Droid
+
+wget https://github.com/Herick75/Box4Droid/raw/main/Apps/termux-x11-1.02.07-0-all.deb
+
+dpkg -i termux-x11-1.02.07-0-all.deb &>/dev/null
+
+echo ""
+
+echo -e " Pacote do Termux-x11 instalado."
+
+echo ""
+
+echo -e " Baixando o RootFS Pré-configurado ..."
+
+echo ""
+
+mkdir -p $PREFIX/var/lib/proot-distro/installed-rootfs
+
+mkdir -p $PREFIX/etc/proot-distro
+
+cd $PREFIX/etc/proot-distro
+
+wget https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/0.0.3/box4droid.override.sh
+
+chmod +x box4droid.override.sh
+
+cd $PREFIX/var/lib/proot-distro/installed-rootfs
+
+wget https://github.com/Herick75/Box4Droid/releases/download/0.0.3-alpha/Box86-Box64-rootfs-v0.0.3.tar.xz
+
+echo ""
+
+echo -e " Descompactando o RootFS,por favor aguarde ..."
+
+proot-distro restore Box86-Box64-rootfs-v0.0.3.tar.xz &>/dev/null
+
+rm -rf $PREFIX/var/lib/proot-distro/installed-rootfs/Box86-Box64-rootfs-v0.0.3.tar.xz
+
+echo ""
+
+echo -e " Rootfs instalado."
+
+echo ""
+
+echo -e " Instalando os Scripts no idioma Português Brasileiro ..."
+
+cd $PREFIX/var/lib/proot-distro/installed-rootfs/box4droid/opt
+
+wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/0.0.3/scripts-Ptbr.tar.gz
+
+tar -xvf scripts-Ptbr.tar.gz
+
+rm -rf scripts-Ptbr.tar.gz
+
+sed -i "106s/.*/export Lang=ptbr/" $PREFIX/var/lib/proot-distro/installed-rootfs/box4droid/root/.bashrc;
+
+echo " Scripts installed"
+
+echo ""
+
+echo -e " Baixando os Scripts de inicialização do RootFS ..."
+
+cd $HOME/Box4Droid/
+
+wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/0.0.3/Init-Ptbr/box
+
+wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/0.0.3/Init-Ptbr/start-ubuntu.sh
+
+wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/0.0.3/Init-Ptbr/chroot.sh
+
+wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/0.0.3/Init-Ptbr/Uninstall-box
+
+chmod +x box
+
+mv box $PREFIX/bin/
+
+chmod +x start-ubuntu.sh
+
+chmod +x chroot.sh
+
+chmod +x Uninstall-box
+
+mv Uninstall-box $PREFIX/bin/
+
+echo ""
+
+echo -e " Scripts instalados."
+
+echo ""
+
+echo -e " Removendo resíduos de instalação  ..."
+
+echo ""
+
+cd $HOME/Box4Droid
+
+rm -rf $HOME/install
+
+rm -rf termux-x11-1.02.07-0-all.deb
+
+rm -rf $HOME/ptbr
+
+rm -rf $HOME/eng
+
+clear
+
+echo ""
+
+echo -e "\x1b[32m\033 Instalação concluída, aqui vai algumas dicas de uso."
+
+echo ""
+
+echo " Você precisa seguir está ordem para que tudo funcione como o esperado : "
+
+echo ""
+
+echo -e " Digite 'box' no terminal, escolha uma resolução que deseja iniciar o Termux-x11, e pronto, o menu do Box4Droid irá iniciar"
+
+echo ""
+
+echo -e " Você também pode usar alguns parâmetros no comando 'box', aqui estão eles:"
+
+echo ""
+
+echo -e " box --help Mostra uma página de ajuda."
+
+echo ""
+
+echo -e " box --update Atualiza os scripts para a última versão disponível."
+
+echo ""
+
+echo -e " Uninstall-box Vai remover completamente todos os arquivos do Box4Droid, incluindo o RootFS, e a pasta Box4Droid no armazenamento interno e os scripts."
+
+echo ""
+
+echo -e " Isso é tudo"
+
+#Dar permissões para o bash do Box64
+chmod +x $PREFIX/var/lib/proot-distro/installed-rootfs/box4droid/root/box64_bash/bash
