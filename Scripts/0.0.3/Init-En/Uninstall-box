@@ -3,8 +3,8 @@
 while true; do
     clear
 
-    if [ -e $PREFIX/var/lib/proot-distro/installed-rootfs/ubuntu/opt/chroot ]; then
-	if [ -z "$(sudo ls -A $PREFIX/var/lib/proot-distro/installed-rootfs/ubuntu/sdcard)" ]; then
+    if [ -e $PREFIX/var/lib/proot-distro/installed-rootfs/box4droid/opt/chroot ]; then
+	if [ -z "$(sudo ls -A $PREFIX/var/lib/proot-distro/installed-rootfs/box4droid/sdcard)" ]; then
 		echo ""
 		echo " Checking for possible partitions not unmounted correctly..."
 		echo ""
@@ -34,7 +34,7 @@ while true; do
             1)
                 echo "Removing ..."
                 sudo rm -rf /data/data/com.termux/files/home/Box4Droid/
-		sudo rm -rf /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu
+		sudo rm -rf /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/box4droid
 		rm -rf $HOME/storage/shared/Box4Droid
 		rm -rf $PREFIX/bin/box
 		echo "Done."
