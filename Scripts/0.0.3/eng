@@ -137,7 +137,7 @@ echo ""
 
 echo -e " Installing scripts in the English language"
 
-cd $PREFIX/var/lib/proot-distro/installed-rootfs/ubuntu/opt
+cd $PREFIX/var/lib/proot-distro/installed-rootfs/box4droid/opt
 
 wget https://github.com/Herick75/Box4Droid/raw/main/Scripts/0.0.3/scripts-En.tar.gz
 
@@ -145,7 +145,7 @@ tar -xvf scripts-En.tar.gz
 
 rm -rf scripts-En.tar.gz
 
-sed -i "106s/.*/export Lang=eng/" $PREFIX/var/lib/proot-distro/installed-rootfs/ubuntu/root/.bashrc;
+sed -i "106s/.*/export Lang=eng/" $PREFIX/var/lib/proot-distro/installed-rootfs/box4droid/root/.bashrc;
 
 echo " Scripts installed"
 
