@@ -123,6 +123,8 @@ cd $PREFIX/etc/proot-distro
 
 wget https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/0.0.3/box4droid.override.sh
 
+chmod +x box4droid.override.sh
+
 cd $PREFIX/var/lib/proot-distro/installed-rootfs
 
 wget https://github.com/Herick75/Box4Droid/releases/download/0.0.3-alpha/Box86-Box64-rootfs-v0.0.3.tar.xz
