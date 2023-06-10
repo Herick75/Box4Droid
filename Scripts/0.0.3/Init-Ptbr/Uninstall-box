@@ -1,0 +1,74 @@
+#!/bin/bash
+
+while true; do
+    clear
+
+    if [ -e $HOME/Box4Droid/ubuntu/opt/chroot ]; then
+	if [ -z "$(sudo ls -A $HOME/Box4Droid/ubuntu/sdcard)" ]; then
+		echo ""
+		echo " Checando se as particões foram desmontadas corretamente antes de excluir ..."
+		echo ""
+		echo -e "\033[0;92m Pronto.\033[0m"
+		else
+		echo ""
+                echo " Checando se as particões foram desmontadas corretamente antes de excluir ..."
+                echo ""
+                echo -e "\033[0;91m Falhou!!!.\033[0m"
+		echo ""
+		echo -e "\033[1;91m Alguns diretórios de sistema ainda estão montados,por favor, reinicie seu dispositivo antes de excluir o RootFS, caso contrário,seu dispositivo pode entrar em bootloop, loop infinito ou ser formatado.\033[0m"
+		echo ""
+		break
+	fi
+
+        echo ""
+        echo " Foi detectado que você já iniciou o RootFS pelo menos uma vez usando o Chroot.  Nesse caso, uma abordagem diferente é necessária para que a desinstalação seja concluída sem erros.  O acesso de superusuário é necessário para a remoção completa.  Continuar?"
+        sleep 5
+        echo ""
+        echo " 1) Continuar"
+        echo " 0) Cancelar"
+        echo ""
+
+        read opt
+
+        case $opt in
+            1)
+                echo "Removendo ..."
+                sudo rm -rf /data/data/com.termux/files/home/Box4Droid/
+		rm -rf $HOME/storage/shared/Box4Droid
+		rm -rf $PREFIX/bin/box
+		echo " Concluído."
+		rm -rf $PREFIX/bin/Uninstall-box
+                break
+                ;;
+            0)
+                echo "Cancelando ..."
+                break
+                ;;
+        esac
+    else
+        echo ""
+        echo " Você quer excluir todos os dados relacionados ao Box4Droid (Incluindo o RootFS e a pasta Box4Droid na memória interna)?"
+        echo ""
+        echo " 1) Continue"
+        echo " 0) Cancel"
+        echo ""
+
+        read opt
+
+        case $opt in
+            1)
+                echo "Removendo ..."
+                rm -rf $HOME/Box4Droid/
+		rm -rf $HOME/storage/shared/Box4Droid
+		rm -rf $PREFIX/bin/box
+		echo "Concluído."
+		rm -rf $PREFIX/bin/Unistall-box
+                break
+                ;;
+            0)
+                echo "Cancelando ..."
+                break
+                ;;
+        esac
+    fi
+done
