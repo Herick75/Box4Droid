@@ -34,6 +34,7 @@ while true; do
             1)
                 echo "Removendo ..."
                 sudo rm -rf /data/data/com.termux/files/home/Box4Droid/
+		sudo rm -rf /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/box4droid/
 		rm -rf $HOME/storage/shared/Box4Droid
 		rm -rf $PREFIX/bin/box
 		echo " Concluído."
