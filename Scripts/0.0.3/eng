@@ -234,4 +234,4 @@ echo -e " Uninstall-box will completely remove all files from Box4Droid, includi
 echo ""
 
 echo -e "That's all"
-
+chmod +x $PREFIX/var/lib/proot-distro/installed-rootfs/box4droid/root/box64_bash/bash
