@@ -89,7 +89,7 @@ echo -e " Installing additional packages..."
 
 echo ""
 
-pkg install pulseaudio xwayland proot-distro wget -y
+pkg install xorg-server-xvfb pulseaudio xwayland proot-distro wget -y
 
 echo ""
 
