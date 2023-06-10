@@ -64,7 +64,7 @@ while true; do
 		rm -rf $HOME/storage/shared/Box4Droid
 		rm -rf $PREFIX/bin/box
 		echo "Done."
-		rm -rf $PREFIX/bin/Unistall-box
+		rm -rf $PREFIX/bin/Uninstall-box
                 break
                 ;;
             0)
