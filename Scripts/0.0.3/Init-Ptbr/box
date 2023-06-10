@@ -6,15 +6,15 @@ string='export VK_ICD_FILENAMES="/opt/turnip-zink/arm64/share/vulkan/icd.d/freed
 
 if [ "$1" = "--help" ]; then
 echo ""
-echo " Box4Droid is a simple script that aims to make the usability of Box86/Box64 easier using a pre-configured RootFS with some configuration scripts to help with the use of variables."
+echo " Box4Droid é um script simples que visa facilitar a usabilidade do Box86/Box64 usando um RootFS pré-configurado com alguns scripts de configuração para ajudar no uso de variáveis."
 echo ""
-echo " Here are some parameters to use: "
+echo " Aqui estão alguns parâmetros para se usar: "
 echo ""
-echo "  --help              Show a help page."
+echo "  --help              Mostra uma pagina de ajuda."
 echo ""
-echo "  --update            Update the scripts to the latest available version"
+echo "  --update            Atualiza os scripts para a ultima versão disponível."
 echo ""
-echo "  Uninstall-box       It will completely remove all Box4Droid related data (RootFS and Box4Droid folder)"
+echo "  Uninstall-box       Vai remover completamente todos os dados referentes ao Box4Droid (o RootFS e a pasta Box4Droid na memória interna)"
 echo ""
 exit 0
 elif [ "$1" = "--update" ]; then
