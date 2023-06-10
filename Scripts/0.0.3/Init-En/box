@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export Rootfs="$PREFIX/var/lib/proot-distro/installed-rootfs/box4droid"
-export lastRes=1280x720
+export lastRes=""
 string='export VK_ICD_FILENAMES="/opt/turnip-zink/arm64/share/vulkan/icd.d/freedreno_icd.aarch64.json:/opt/turnip-zink/armhf/share/vulkan/icd.d/freedreno_icd.armv8.2l.json"'
 
 if [ "$1" = "--help" ]; then
