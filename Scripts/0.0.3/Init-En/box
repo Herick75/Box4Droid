@@ -189,7 +189,7 @@ sed -i '101s/.*/export LIBGL_DRIVERS_PATH="\/opt\/turnip-zink\/arm64\/lib\/aarch
 
 sed -i "102c\\${string}" $Rootfs/root/.bashrc;
 
-sed -i "108s/.*/export SCRIPT=proot/" $Rootfs/root/.bashrc;
+sed -i "108s/.*/export SCRIPT=prootdistro/" $Rootfs/root/.bashrc;
 
 echo ""
 
