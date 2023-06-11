@@ -12,11 +12,11 @@ No, Box4Droid uses proot to run Rootfs, so no, root is not required.
 
 First you need to install [Termux](https://f-droid.org/en/packages/com.termux) and [Termux-x11](https://github.com/Herick75/Box4Droid/releases/download/0.0.3-alpha/Termux-x11.apk).  After installing them, just copy the command `curl -o install https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/install && chmod +x install && ./install` and paste it in the Termux terminal and wait until the installation completes.
 
-# How to start Box86 + Wine?
+# How to start Box4Droid ?
 
-After the installation is completed, you just need to start Termux-x11 by typing `x11` in the terminal, enter the Termux-x11 app, then go back to Termux, and then type `start-box86`, in seconds Wine will start together with the TFM.
+After the installation is completed, type ```box``` in the terminal, then it will ask which resolution you want to use, after choosing it you will enter the Box4Droid menu
 
-You can also use Input Bridge, just run `installer.bat` and Input Bridge will start automatically.
+
 
 # System requirements 
 
