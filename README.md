@@ -19,7 +19,7 @@ After the installation is completed, type ```box``` in the terminal, then it wil
 
 # System requirements 
 
-*Adreno 616+ - Adreno 650 (With stable drivers)
+*Adreno 616 - Adreno 650 (With stable drivers)
 
 Adreno 7xx (With experimental drivers)
 
