@@ -67,7 +67,7 @@ Install VirGL for Mali GPUs.
 
 Create a launcher.
 
-Box86 and Box64 included.
+
 
 # Things to note
 
