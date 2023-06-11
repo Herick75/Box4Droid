@@ -10,19 +10,22 @@ Currently, the script provides two ways to run RootFS, ```Proot``` and ```Chroot
 
 # How to install?  
 
-First you need to install [Termux](https://f-droid.org/en/packages/com.termux) and [Termux-x11](https://github.com/Herick75/Box4Droid/releases/download/0.0.3-alpha/Termux-x11.apk).  After installing them, just copy the command `curl -o install https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/install && chmod +x install && ./install` and paste it in the Termux terminal and wait until the installation completes.
+First you need to install [Termux](https://f-droid.org/en/packages/com.termux) and [Termux-x11](https://github.com/Herick75/Box4Droid/releases/download/0.0.3-alpha/Termux-x11.apk).  After installing them, just copy the command `curl -o install https://raw.githubusercontent.com/Herick75/Box4Droid/main/Scripts/install && chmod +x install && ./install` and paste it in the Termux terminal, after you paste the command in Termux, choose an installation language, and then select your preferred version, and wait until the installation is completed.
 
 # How to start Box4Droid ?
 
-After the installation is completed, type ```box``` in the terminal, then it will ask which resolution you want to use, after choosing it you will enter the Box4Droid menu
-
+After the installation is completed, type ```box``` in the terminal, then it will ask which resolution you want to use, after choosing it you will enter the Box4Droid menu.
 
 
 # System requirements 
 
-*Adreno 618+ (Except on adreno 7xx GPUS)
+*Adreno 616+
 
-*Android 10+??  
+Adreno 7xx (With experimental drivers)
+
+Adreno 610 (With experimental drivers)
+
+*Android 10+
 
 *64-bit Android 
 
