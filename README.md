@@ -19,7 +19,7 @@ After the installation is completed, type ```box``` in the terminal, then it wil
 
 # System requirements 
 
-*Adreno 616+
+*Adreno 616+ - Adreno 650 (With stable drivers)
 
 Adreno 7xx (With experimental drivers)
 
@@ -29,7 +29,7 @@ Adreno 610 (With experimental drivers)
 
 *64-bit Android 
 
-*You also need at least 4GB free for the installation to go without problems.
+*You also need at least 2,4GB free for the installation to go without problems.
 
 # How to configure?  
 
