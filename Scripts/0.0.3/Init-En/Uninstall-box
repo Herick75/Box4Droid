@@ -60,7 +60,7 @@ while true; do
             1)
                 echo "Removing ..."
                 rm -rf $HOME/Box4Droid/
-		proot-distro remove ubuntu
+		proot-distro remove box4droid
 		rm -rf $HOME/storage/shared/Box4Droid
 		rm -rf $PREFIX/bin/box
 		echo -e " \033[0;92mDone\033[0m."
